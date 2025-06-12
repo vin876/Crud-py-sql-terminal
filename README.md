@@ -8,15 +8,23 @@ Projeto simples de CRUD com Python e MySQL.
 - MySQL Workbench 8.0 CE
 - mysql-connector-python
 
-## Como usar
+🧠 Como o projeto funciona
+Este projeto é um sistema de gerenciamento de tarefas usando Python e MySQL. Ele permite que você adicione, visualize, atualize e delete tarefas diretamente pelo terminal.
 
-1. Crie o banco e a tabela no MySQL com o script:
-```sql
-CREATE DATABASE tarefas_db;
-USE tarefas_db;
-CREATE TABLE tarefas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(255),
-    descricao TEXT,
-    status VARCHAR(50) DEFAULT 'pendente'
-);
+⚙️ Funcionamento passo a passo
+Banco de Dados (MySQL)
+O banco tarefas_db é criado com a tabela tarefas.
+A tabela armazena: id, título, descrição, status, data de criação e data de atualização.
+Conexão com o MySQL (database.py)
+
+O Python se conecta ao MySQL usando mysql-connector-python.
+As credenciais estão no arquivo database.py.
+
+Funções CRUD (models.py)
+adicionar_tarefa() → Insere uma nova tarefa.
+listar_tarefas() → Mostra todas as tarefas do banco.
+atualizar_tarefa() → Altera o status de uma tarefa.
+deletar_tarefa() → Remove uma tarefa.
+Interface via terminal (main.py)
+Um menu interativo no terminal permite escolher as opções (adicionar, listar, atualizar ou deletar).
+As funções do CRUD são chamadas conforme a opção do usuário.
